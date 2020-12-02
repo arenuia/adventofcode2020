@@ -1,7 +1,5 @@
 # Puzzle 2 for Advent of Code
 
-# Part 1
-
 PASS_REQ = /(\d+)-(\d+) (.): (.+)/
 
 passwords = File.readlines("puzzle2/input-puzzle2.txt")
@@ -10,6 +8,9 @@ valid_count_p1 = 0
 valid_count_p2 = 0
 
 passwords.each do |line|
+
+  # Part 1
+
   pass = line.match(PASS_REQ) { |m| Password.new(*m.captures) }
   pass[:low_num] = pass[:low_num].to_i
   pass[:high_num] = pass[:high_num].to_i
@@ -17,6 +18,8 @@ passwords.each do |line|
     valid_count_p1 += 1
   end
 
+  # Part 2
+  
   char_1 = pass[:password][pass[:low_num] - 1] == pass[:character]
   char_2 = pass[:password][pass[:high_num] - 1] == pass[:character]
   if char_1 && char_2
