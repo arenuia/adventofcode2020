@@ -19,7 +19,7 @@ passwords.each do |line|
   end
 
   # Part 2
-  
+
   char_1 = pass[:password][pass[:low_num] - 1] == pass[:character]
   char_2 = pass[:password][pass[:high_num] - 1] == pass[:character]
   if char_1 && char_2
@@ -34,6 +34,3 @@ end
 
 puts valid_count_p1
 puts valid_count_p2
-
-# Part 2
-
