@@ -1,6 +1,4 @@
-# Code does not account for blank line at end of input, must figure out why
-
-forms = File.read("puzzle6/input-puzzle6.txt").split("\n\n")
+forms = File.read("puzzle6/input-puzzle6.txt").chomp.split("\n\n")
 
 def group_response_p1(form)
   ques_affirm = []
